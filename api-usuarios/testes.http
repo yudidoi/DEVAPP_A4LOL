@@ -1,0 +1,47 @@
+@baseUrl = http://localhost:3000
+
+### Cadastro
+POST {{baseUrl}}/usuarios/cadastro
+Content-Type: application/json
+
+{
+  "nome": "Joao",
+  "sobrenome": "Silva",
+  "email": "joao.teste@example.com",
+  "usuario": "joaoteste",
+  "senha": "123456"
+}
+
+### Login
+# @name login
+POST {{baseUrl}}/usuarios/login
+Content-Type: application/json
+
+{
+  "email": "joao.teste@example.com",
+  "senha": "123456"
+}
+
+### Listar usuarios
+GET {{baseUrl}}/usuarios
+Authorization: Bearer {{login.response.body.$.dados.token}}
+
+### Buscar usuario por ID
+GET {{baseUrl}}/usuarios/1
+Authorization: Bearer {{login.response.body.$.dados.token}}
+
+### Alterar usuario
+PUT {{baseUrl}}/usuarios/1
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.$.dados.token}}
+
+{
+  "nome": "Joao",
+  "sobrenome": "Souza",
+  "email": "joao.teste@example.com",
+  "usuario": "joaoteste"
+}
+
+### Excluir usuario
+DELETE {{baseUrl}}/usuarios/1
+Authorization: Bearer {{login.response.body.$.dados.token}}

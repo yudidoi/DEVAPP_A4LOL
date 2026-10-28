@@ -1,0 +1,58 @@
+@apiIa = https://api-ia-lol.vercel.app
+
+### Saúde
+GET {{apiIa}}/saude
+
+
+### Pergunta que o documento responde
+POST {{apiIa}}/perguntar
+Content-Type: application/json
+
+{
+  "pergunta": "Qual é o título da Lux?"
+}
+
+
+### Pergunta sobre skin
+POST {{apiIa}}/perguntar
+Content-Type: application/json
+
+{
+  "pergunta": "Qual skin da Lux custa 3250 RP?"
+}
+
+
+### Pergunta sobre habilidade
+POST {{apiIa}}/perguntar
+Content-Type: application/json
+
+{
+  "pergunta": "Qual é a habilidade Q da Lux?"
+}
+
+
+### Pergunta fora do documento
+POST {{apiIa}}/perguntar
+Content-Type: application/json
+
+{
+  "pergunta": "Qual é o melhor processador para montar um PC gamer?"
+}
+
+
+### Pergunta vazia
+POST {{apiIa}}/perguntar
+Content-Type: application/json
+
+{
+  "pergunta": ""
+}
+
+
+### Pergunta longa demais
+POST {{apiIa}}/perguntar
+Content-Type: application/json
+
+{
+  "pergunta": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+}
